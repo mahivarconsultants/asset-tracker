@@ -1,6 +1,35 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Development Instructions
+
+Below resources are used for developing the app. Please read through the same
+
+- [Material-UI Library](https://material-ui.com) - Use controls from Material-UI library.
+- [Flex Library](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Application layout would be flex by default.
+
+1. Create components in /components in folder
+2. Create pages in /pages folder
+3. Mock data is available through /api/ folder
+4. Mobile First Development: Target for iPhone X form factor ( 74 x 812 px). Use Chrome Dev Tools to simulate phone form factor
+
+## Starting new feature develpoment - DO THIS WITH OUT FAIL
+
+1. git checkout master
+2. git pull
+3. git checkout -b feature/<<your-feature-name>> E.g git checkout -b feature/login-page
+4. git status >> Confirm that you are in new branch
+
+Once you've created a new branch as above, you can start developing the feature
+
+5. Develop code in Visual studio code
+6. Once completed, execute below commands ( or use Visual Studio plugin) to check in the code
+7. git add .
+8. git commit -m "my-message for commit" E.g git commit -m "login ui developed"
+9. git push
+
+Recommended you do the above checkin as frequent as possible so git server has your latest code
+
+## Deployment Instructions
 
 First, run the development server:
 
@@ -11,24 +40,3 @@ yarn dev
 ```
 
 Open [http://localhost:9000](http://localhost:9000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
