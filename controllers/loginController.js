@@ -1,4 +1,10 @@
 import config from "../config";
+/**
+ * Controller methods to invoke API calls
+ * @param {*} userId
+ * @param {*} password
+ * @returns
+ */
 const login = async (userId, password) => {
   const data = {
     userId,

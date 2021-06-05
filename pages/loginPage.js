@@ -21,7 +21,7 @@ export default function LoginPage() {
     console.log(event.target.value);
   };
   const loginClick = () => {
-    // TODO: Gather user id, password values
+    // TODO: Gather user id, password values and send to login controller
     setError(null);
     login("test", "password")
       .then((data) => {})
