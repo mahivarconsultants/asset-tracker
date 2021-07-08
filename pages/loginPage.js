@@ -3,10 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/loginPage.module.scss";
-import Snackbar from "@material-ui/core/Snackbar";
 import Typography from "@material-ui/core/Typography";
 import { login } from "../controllers/loginController";
 
@@ -24,7 +21,7 @@ export default function LoginPage() {
     // TODO: Gather user id, password values and send to login controller
     setError(null);
     login("test", "password")
-      .then((data) => {})
+      .then((data) => { })
       .catch((err) => {
         setError(err.message);
       });
@@ -43,9 +40,7 @@ export default function LoginPage() {
             control={
               <Checkbox
                 defaultChecked
-                size="small"
                 color="primary"
-                inputProps={{ "aria-label": "secondary checkbox" }}
               />
             }
             label="Remember Me"

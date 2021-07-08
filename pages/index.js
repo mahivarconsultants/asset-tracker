@@ -1,8 +1,9 @@
+import React from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import AssetListView from "./assetListView";
 import LoginPage from "./loginPage";
+import AssetListView from "./assetListView";
+
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </Head>
       <LoginPage />
-      <AssetListView />
     </div>
   );
 }
+
+

@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import Button from "@material-ui/core/Button";
-import PropTypes from 'prop-types';
 import SearchIcon from '@material-ui/icons/Search';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import { login } from "../controllers/loginController";
 const useStyles = makeStyles((theme) => ({
     search: {
         position: 'relative',
