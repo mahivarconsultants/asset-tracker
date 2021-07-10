@@ -9,7 +9,7 @@ import { login } from "../controllers/loginController";
 
 export default function LoginPage() {
   const [error, setError] = useState();
-  const [state, setState] = useState({ userId: null, password: null });
+  const [state, setState] = useState({ userId: "", password: "" });
   const { userId, password } = state;
   const onUserIdChange = ({ target: { value: userId } }) => {
     setError(null);
@@ -40,7 +40,7 @@ export default function LoginPage() {
         <TextField
           required
           id="outlined-basic"
-          placeholder="user name"
+          placeholder="Enter user id"
           variant="outlined"
           onChange={onUserIdChange}
           value={userId}
@@ -50,6 +50,7 @@ export default function LoginPage() {
           id="filled-password-input"
           type="password"
           variant="outlined"
+          placeholder="Enter password"
           onChange={onPasswordChange}
           value={password}
         />
