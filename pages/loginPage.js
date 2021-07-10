@@ -9,18 +9,22 @@ import { login } from "../controllers/loginController";
 
 export default function LoginPage() {
   const [error, setError] = useState();
-  const onUserIdChange = (event) => {
+  const [state, setState] = useState({ userId: null, password: null });
+  const { userId, password } = state;
+  const onUserIdChange = ({ target: { value: userId } }) => {
     setError(null);
-    console.log(event.target.value);
+    console.log(userId);
+    setState({ userId, password });
   };
-  const onPasswordChange = (event) => {
+  const onPasswordChange = ({ target: { value: password } }) => {
     setError(null);
-    console.log(event.target.value);
+    console.log(password);
+    setState({ userId, password });
   };
   const loginClick = () => {
     // TODO: Gather user id, password values and send to login controller
     setError(null);
-    login("test", "test")
+    login(userId, password)
       .then((data) => {})
       .catch((err) => {
         setError(err.message);
@@ -33,8 +37,22 @@ export default function LoginPage() {
         Login
       </Typography>
       <form noValidate autoComplete="off">
-        <TextField required id="outlined-basic" placeholder="user name" variant="outlined" onChange={onUserIdChange} />
-        <TextField required id="filled-password-input" type="password" variant="outlined" onChange={onPasswordChange} />
+        <TextField
+          required
+          id="outlined-basic"
+          placeholder="user name"
+          variant="outlined"
+          onChange={onUserIdChange}
+          value={userId}
+        />
+        <TextField
+          required
+          id="filled-password-input"
+          type="password"
+          variant="outlined"
+          onChange={onPasswordChange}
+          value={password}
+        />
         <div className={styles.rememberMeLogin}>
           <FormControlLabel control={<Checkbox defaultChecked color="primary" />} label="Remember Me" />
 
