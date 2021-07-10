@@ -20,8 +20,8 @@ export default function LoginPage() {
   const loginClick = () => {
     // TODO: Gather user id, password values and send to login controller
     setError(null);
-    login("test", "password")
-      .then((data) => { })
+    login("test", "test")
+      .then((data) => {})
       .catch((err) => {
         setError(err.message);
       });
@@ -36,15 +36,7 @@ export default function LoginPage() {
         <TextField required id="outlined-basic" placeholder="user name" variant="outlined" onChange={onUserIdChange} />
         <TextField required id="filled-password-input" type="password" variant="outlined" onChange={onPasswordChange} />
         <div className={styles.rememberMeLogin}>
-          <FormControlLabel
-            control={
-              <Checkbox
-                defaultChecked
-                color="primary"
-              />
-            }
-            label="Remember Me"
-          />
+          <FormControlLabel control={<Checkbox defaultChecked color="primary" />} label="Remember Me" />
 
           <Button variant="contained" color="primary" onClick={loginClick}>
             Login
