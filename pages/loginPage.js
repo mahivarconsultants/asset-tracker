@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
@@ -11,6 +12,7 @@ export default function LoginPage() {
   const [error, setError] = useState();
   const [state, setState] = useState({ userId: "", password: "" });
   const { userId, password } = state;
+  const router = useRouter();
   const onUserIdChange = ({ target: { value: userId } }) => {
     setError(null);
     console.log(userId);
@@ -25,7 +27,8 @@ export default function LoginPage() {
     // TODO: Gather user id, password values and send to login controller
     setError(null);
     login(userId, password)
-      .then((data) => {})
+      .then((data) => {},
+      router.push('/asset'))
       .catch((err) => {
         setError(err.message);
       });
@@ -57,7 +60,7 @@ export default function LoginPage() {
         <div className={styles.rememberMeLogin}>
           <FormControlLabel control={<Checkbox defaultChecked color="primary" />} label="Remember Me" />
 
-          <Button variant="contained" color="primary" onClick={loginClick}>
+          <Button variant="contained" color="primary" type="button" onClick={loginClick}>
             Login
           </Button>
         </div>
