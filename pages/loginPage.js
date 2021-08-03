@@ -27,8 +27,7 @@ export default function LoginPage() {
     // TODO: Gather user id, password values and send to login controller
     setError(null);
     login(userId, password)
-      .then((data) => {},
-      router.push('/asset'))
+      .then((data) => {}, router.push("/assetListView"))
       .catch((err) => {
         setError(err.message);
       });

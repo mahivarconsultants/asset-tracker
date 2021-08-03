@@ -5,22 +5,17 @@ import config from "../config";
  * @param {*} password
  * @returns
  */
-const login = async (userId, password) => {
-  const data = {
-    userId,
-    password,
-  };
-  return fetch(`${config.api.baseUrl}/auth`, {
-    method: "POST",
+const getAssets = async () => {
+  return fetch(`${config.api.baseUrl}/device`, {
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
   }).then((response) => {
     if (!response.ok) {
       throw new Error(response.json());
     }
-    return response.json();
+    return response.json().then((res) => res.data);
   });
 };
-export { login };
+export { getAssets };
