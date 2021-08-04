@@ -5,7 +5,12 @@ import Button from "@material-ui/core/Button";
 import SearchIcon from "@material-ui/icons/Search";
 import { getAssets } from "../controllers/assetListViewController";
 import AssetSummaryView from "./assetSummaryView";
+import { CenterFocusStrong } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: '30px',
+    padding: '30px',
+  },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -55,7 +60,7 @@ export default function AssetListView() {
   }, []);
   console.log({ assets });
   return (
-    <div>
+    <div className="asset">
       <h1>Assets List View</h1>
       <div className={classes.search}>
         <div className={classes.searchIcon}>
@@ -73,7 +78,9 @@ export default function AssetListView() {
       {assets.map((asset) => (
         <AssetSummaryView data={asset} />
       ))}
-      <Button>Show Map View</Button>
+          <Button variant="contained" color="primary">
+                Show Map View
+          </Button>
     </div>
   );
 }

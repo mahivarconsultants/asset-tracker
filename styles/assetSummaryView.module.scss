@@ -1,0 +1,25 @@
+@use 'base';
+.assetSummaryView {
+  border: base.$border-style;
+  border-radius: base.$border-radius;
+  padding: 2%;
+  min-width: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  button {
+    width: 30%;
+    margin: 3px;
+  }
+  .inline {
+    display: inline-flex;
+  }
+}
+.asset {
+  h1 {
+    text-align: center;
+  }
+}

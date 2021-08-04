@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import LoginPage from "./loginPage";
-import AssetListView from "./assetListView";
 import { useRouter } from "next/router";
 
 export default function Home() {
