@@ -7,11 +7,13 @@ export default function assetSummaryView({ data }) {
   console.log(data);
   return (
     <>
-    <div className="assetSummaryView" key={data.deviceId}>     
-      <h2>{name}</h2>
-      <h2>{distance} Km</h2>
-      <h3>{address}</h3>
-      <h3>Last Signal: {lastSignalDateTime}</h3>      
+    <div className="container pb-3" key={data.deviceId}>  
+    <span className="row p-2">   
+      <h3 className="col-2">{name}</h3>
+      <h3 className="col-2">{distance} Km</h3>
+    </span> 
+      <h5 className="pb-2">{address}</h5>
+      <h5 className="pb-1">Last Signal: {lastSignalDateTime}</h5>     
     </div>
     <hr />
     </>

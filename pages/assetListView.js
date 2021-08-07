@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import InputBase from "@material-ui/core/InputBase";
-import Button from "@material-ui/core/Button";
 import SearchIcon from "@material-ui/icons/Search";
 import { getAssets } from "../controllers/assetListViewController";
 import AssetSummaryView from "./assetSummaryView";
-import { CenterFocusStrong } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: '30px',
@@ -60,7 +58,7 @@ export default function AssetListView() {
   }, []);
   console.log({ assets });
   return (
-    <div className="asset">
+    <div className="container overflow-hidden">
       <h1>Assets List View</h1>
       <div className={classes.search}>
         <div className={classes.searchIcon}>
@@ -78,9 +76,7 @@ export default function AssetListView() {
       {assets.map((asset) => (
         <AssetSummaryView data={asset} />
       ))}
-          <Button variant="contained" color="primary">
-                Show Map View
-          </Button>
+          <button type="button" className="btn btn-primary btn-lg mb-2">Show Map View</button>
     </div>
   );
 }
